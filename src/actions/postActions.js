@@ -3,6 +3,7 @@ import axios from 'axios';
 
 export function fetchPosts(){
     return function (dispatch) {
+        // console.log('fetching posts')
         axios.get('https://jsonplaceholder.typicode.com/posts')
         .then(res => {
             const result = res.data;
