@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import axios from 'axios';
+// import axios from 'axios';
+import { connect } from 'react-redux';
 
 class Posts extends Component {
 
@@ -10,18 +11,18 @@ class Posts extends Component {
         }
     }
 
-    componentWillMount() {
-        // fetch('https://jsonplaceholder.typicode.com/posts')
-        // .then(res => res.json())
-        // .then(data => console.log(data))
+    // componentWillMount() {
+    //     // fetch('https://jsonplaceholder.typicode.com/posts')
+    //     // .then(res => res.json())
+    //     // .then(data => console.log(data))
 
-        axios.get('https://jsonplaceholder.typicode.com/posts')
-        .then(res => {
-            const result = res.data;
-            console.log("result", result);
-            this.setState({posts: result})
-        })
-    }
+    //     axios.get('https://jsonplaceholder.typicode.com/posts')
+    //     .then(res => {
+    //         const result = res.data;
+    //         console.log("result", result);
+    //         this.setState({posts: result})
+    //     })
+    // }
     render() {
         const postItems = this.state.posts.map(post => (
             <div key={post.id}>
